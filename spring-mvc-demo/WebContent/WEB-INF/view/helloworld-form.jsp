@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-	<form action="processForm" method="GET">
+	<form action="processedFormVerTwo" method="GET">
 		<input type="text" name="studentName" 
 		placeholder="Whats's your name?" />
 		<input type="submit" />

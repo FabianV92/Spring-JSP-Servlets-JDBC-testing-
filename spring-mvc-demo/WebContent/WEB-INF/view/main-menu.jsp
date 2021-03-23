@@ -2,5 +2,6 @@
 <html>
 <body>
 	<h2>Spring MVC DEMO APP</h2>
-</body>
+	<a href="showForm">Get to the form</a>
+	</body>
 </html>
