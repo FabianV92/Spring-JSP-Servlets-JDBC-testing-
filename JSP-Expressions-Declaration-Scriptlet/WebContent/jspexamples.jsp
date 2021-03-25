@@ -1,6 +1,9 @@
+
 <!DOCTYPE>
+<%@page import="com.fv.jsp.demo.TestMethods"%>
 <html>
 <body>
+
 <h1>The following are JSP Expressions examples: </h1>
 The time of the server is <%= new java.util.Date() %>
 <br><br>
@@ -23,5 +26,9 @@ Is 67 less than 76? <%= 67 < 76 %>
 } %>
 Lower case : hello world. Using own method to convert to Uppercase :
 <%=convertToUpperCase("hello world") %>
+<br><br>
+testing access to a method of on own written class : 
+<%= TestMethods.convToUpperCase("test") %>
+be careful method has to be static
 </body>
 </html>
