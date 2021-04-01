@@ -18,15 +18,14 @@
 		<option>Russia</option>
 		</select>
 		<br><br>
-		<input type="radio" name="gender" value="female">Male
-		<input type="radio" name="gender" value="male">Female
+		<input type="radio" name="gender" value="female">female
+		<input type="radio" name="gender" value="male">males
 		<br><br>
 		<input type="checkbox" name="favouriteLanguage" value="Java"> Java
 		<input type="checkbox" name="favouriteLanguage" value="JavaScript"> JavaScript
 		<input type="checkbox" name="favouriteLanguage" value="Php"> PHP
 		<br><br>
 		<input type="submit" value="submit">
-		
 		
 		</select>
 	</form>

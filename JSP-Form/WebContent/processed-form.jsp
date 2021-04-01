@@ -6,20 +6,20 @@
 <body>
 <h1>Hello ${param.firstName} ${param.secondName}</h1>
 <br><br>
-<p>Your salary will be 
-<% String[] languages = request.getParameterValues("favoriteLanguage");
-int salary = 0;
-int demand = 0;
-for (String i : languages) {
-	if (i.equals("Java")){
-		demand += 9;
-	};
-	if (i.equals("Php")) {
-		demand += 5;
-	}
-	else demand += 8;
+<p>
+<% 
+String country  = request.getParameter("country");
+String gender = request.getParameter("gender");
+String [] progLanguages = request.getParameterValues("favouriteLanguage");
+StringBuilder progLanguagesStr = new StringBuilder();
+for (int i = 0; i < progLanguages.length; i++) {
+	progLanguagesStr.append(progLanguages[i]).append(",");
 }
- %>
+progLanguagesStr = progLanguagesStr.replace(progLanguagesStr.length()-1, progLanguagesStr.length(), "");
+out.println("You are from : " + country + "<br>");
+out.println("You are : " + gender + "<br>");
+out.println("You also like the following programming languages : " + progLanguagesStr.toString());
+%>
  </p>
 </body>
 </html>
