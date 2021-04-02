@@ -22,7 +22,9 @@
 	}
 	// Check if items are  to add
 	String toDoTxt = request.getParameter("toDoTxt");
-	if (toDoTxt != null) {
+	// Preventing that by refreshing the item will not written twice
+	boolean isItemNotDuplicate = toDoTxt != null && !itemsList.contains(toDoTxt.trim());
+	if (toDoTxt != null && isItemNotDuplicate) {
 		itemsList.add(toDoTxt);
 	}
 	%>
