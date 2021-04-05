@@ -5,6 +5,13 @@ private String firstName;
 private String lastName;
 private boolean goldCustomer;
 
+public Student(String firstName, String lastName, boolean goldCustomer) {
+	super();
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.goldCustomer = goldCustomer;
+}
+
 public String getFirstName() {
 	return firstName;
 }
@@ -29,12 +36,6 @@ public void setGoldCustomer(boolean goldCustomer) {
 	this.goldCustomer = goldCustomer;
 }
 
-public Student(String firstName, String lastName, boolean goldCustomer) {
-	super();
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.goldCustomer = goldCustomer;
-}
 
 
 }

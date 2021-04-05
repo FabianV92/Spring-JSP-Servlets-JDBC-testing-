@@ -22,7 +22,7 @@ pageContext.setAttribute("myStudents", data);
 <body>
 	<!-- What happening behind the scene is that JSP is calling
 the tmp.getFirstName, tmp.getLastName, tmp.isGoldCusomer -->
-	<table border="1" margin="2">
+	<table border="1">
 
 		<!-- <tr> defines a row -->
 		<tr>
