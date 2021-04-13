@@ -10,25 +10,31 @@
 </head>
 <body>
 	<header>
-		<h1>University of JavaIsAwesome</h1>
+		<h1>The University</h1>
 		<hr>
 	</header>
 	<div id="studentContainer">
 		<p>Student list</p>
-		<table>
-			<tr id="headerRow">
-				<th>First name</th>
-				<th>Last name</th>
-				<th>Email</th>
-			</tr>
-			<c:forEach var="tmp" items="${STUDENT_LIST}">
-				<tr id="dataRows">
-					<td>${tmp.firstName}</td>
-					<td>${tmp.lastName}</td>
-					<td>${tmp.email}</td>
+		<div class="studentData">
+			<input type="button" value="Add student"
+				onclick="window.location.href='add-student-form.jsp'"
+				id="add-student-btn">
+			<table>
+				<tr id="headerRow">
+					<th>First name</th>
+					<th>Last name</th>
+					<th>Email</th>
+					<th>Action</th>
 				</tr>
-			</c:forEach>
-		</table>
+				<c:forEach var="tmp" items="${STUDENT_LIST}">
+					<tr id="dataRows">
+						<td>${tmp.firstName}</td>
+						<td>${tmp.lastName}</td>
+						<td>${tmp.email}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 	</div>
 </body>
 </html>
