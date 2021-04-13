@@ -1,6 +1,7 @@
 package com.fv.studenttracker.app;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -76,6 +77,38 @@ public class StudentDbUtil {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+	}
+
+	// JDBC work
+	public void addStudent(Student theStudent) {
+		Connection myConn = null;
+		PreparedStatement myPsm = null;
+		try {
+		// Get DB connection
+		myConn = dataSource.getConnection();
+			
+		// Create SQL statement for inserting
+		String sql = "INSERT INTO student " 
+				+ "(first_name, last_name, email)"
+				+ "VALUES (?, ?, ?)";
+		myPsm = myConn.prepareStatement(sql);
+		
+		// Setting the param values for the SQL
+		myPsm.setString(1, theStudent.getFirstName());
+		myPsm.setString(2, theStudent.getLastName());
+		myPsm.setString(3, theStudent.getEmail());
+		
+		//Executing SQL 
+		
+		// Cleaning JDBC objects
+		myPsm.execute();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			close(myConn,myPsm,null);
 		}
 	}
 }

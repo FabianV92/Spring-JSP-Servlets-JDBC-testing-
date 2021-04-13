@@ -16,7 +16,7 @@
 	<div id="studentContainer">
 		<p>Student list</p>
 		<div class="studentData">
-			<input type="button" value="Add student"
+			<input type="button" value="Add Student"
 				onclick="window.location.href='add-student-form.jsp'"
 				id="add-student-btn">
 			<table>

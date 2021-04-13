@@ -13,11 +13,9 @@
 		<h1>The University</h1>
 	</header>
 	<form action="StudentControllerServlet" method="GET">
+		<input type="hidden" name="command" value="ADD" />
 		<p>Add Student</p>
-		<table>
-			<tr>
-				<td><input type="hidden" name="command" value="ADD" /></td>
-			</tr>
+		<table>			
 			<tbody>
 				<tr>
 					<td><label>First name</label></td>
