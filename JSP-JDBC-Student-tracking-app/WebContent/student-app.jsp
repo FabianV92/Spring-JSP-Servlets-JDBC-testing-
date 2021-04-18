@@ -5,7 +5,9 @@
 <head>
 <link rel="stylesheet" href="./css/student-app-style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+	rel="stylesheet">
 <title>Student-main</title>
 </head>
 <body>
@@ -27,10 +29,16 @@
 					<th>Action</th>
 				</tr>
 				<c:forEach var="tmp" items="${STUDENT_LIST}">
+					<!-- Set up a link for each student(Update link) -->
+					<c:url var="tmpLink" value="StudentControllerServlet">
+						<c:param name="command" value="LOAD"></c:param>
+						<c:param name="studentId" value="${tmp.id}"></c:param>
+					</c:url>
 					<tr id="dataRows">
 						<td>${tmp.firstName}</td>
 						<td>${tmp.lastName}</td>
 						<td>${tmp.email}</td>
+						<td><a href="${tmpLink}">Update</a></td>
 					</tr>
 				</c:forEach>
 			</table>
