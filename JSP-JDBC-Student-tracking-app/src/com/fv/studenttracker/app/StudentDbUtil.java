@@ -185,4 +185,39 @@ public class StudentDbUtil {
 			close(myConn, myPs, null);
 		}
 	}
+
+	public void deleteStudent(String theStudentId) {
+		
+		Connection myConn = null;
+		PreparedStatement myPs = null;
+	
+		try {
+			// Convert student id to int
+			int studentId = Integer.parseInt(theStudentId);
+			
+			// Get connection to database
+			myConn = dataSource.getConnection();
+			
+			// Create sql to delete student
+			String sql = "DELETE FROM student where id=?";
+			// Prepare statement
+			myPs = myConn.prepareStatement(sql);
+			
+			// Set parameters
+			myPs.setInt(1, studentId);
+			
+			// Execute sql statement
+			myPs.execute();
+			
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// Closing JDBC objects
+			close(myConn, myPs,null);
+		}
+		
+		
+	}
 }
